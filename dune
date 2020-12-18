@@ -1,0 +1,8 @@
+(executable
+ (name passwords)
+ (modules Passwords)
+ (libraries batteries))
+(executable
+ (name compwires)
+ (modules Compwires)
+ (libraries batteries))

@@ -1,0 +1,16 @@
+---- cut
+---l skip
+--s- cut
+--sl batteries >=2
+-b-- even last digit of serial
+-b-l parallel port
+-bs- skip
+-bsl parallel port
+r--- even last digit of serial
+r--l batteries >=2
+r-s- cut
+r-sl batteries >=2
+rb-- even last digit of serial
+rb-l even last digit of serial
+rbs- parallel port
+rbsl skip

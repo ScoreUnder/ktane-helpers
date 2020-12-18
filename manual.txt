@@ -1,0 +1,87 @@
+
+
+r0
+b0
+B0
+
+COMPLICATED WIRES
+
+---- cut
+---l skip
+--s- cut
+--sl batteries >=2
+-b-- even last digit of serial
+-b-l parallel
+-bs- skip
+-bsl parallel
+r--- even last digit of serial
+r--l batteries >=2
+r-s- cut
+r-sl batteries >=2
+rb-- even last digit of serial
+rb-l even last digit of serial
+rbs- parallel
+rbsl skip
+
+WIRE SEQUENCES
+
+==Red Wire Occurrences
+(cut if connected to...)
+[ ] C
+[ ] B
+[ ] A
+[ ] A or C
+[ ] B
+[ ] A or C
+[ ] A, B or C
+[ ] A or B
+[ ] B
+
+==Blue Wire Occurrences
+[ ] B
+[ ] A or C
+[ ] B
+[ ] A
+[ ] B
+[ ] B or C
+[ ] C
+[ ] A or C
+[ ] A
+
+==Black Wire Occurrences
+[ ] A, B or C
+[ ] A or C
+[ ] B
+[ ] A or C
+[ ] B
+[ ] B or C
+[ ] A or B
+[ ] C
+[ ] C
+
+MORSE
+
+dot is plus
+3.505 +++++++++-+++-+++++++++++-+++-++
+3.515 +++++-+-+++-++++++++++-+-+++-+++++
+3.522 ++++-++++-+-+-+-++++-++++-+-+-+-
+3.532 -+-+++-+-+-+--+-+++-+-+-+-
+3.535 -++----++-++++-++----++-++++
+3.542 +-++++--+-++++-++++--+-+++
+3.545 +++-+-+----++++++-+-+----+++
+3.552 -+++++++-+-+----+++++++-+-+---
+3.555 ++-++-++++-+-+-+-++-++-++++-+-+-+-
+3.565 -++------+++++-++------+++++
+3.572 -+++-+++--+--+++-+++--+-
+3.575 -+++-+++-+-+-+--+++-+++-+-+-+-
+3.582 +++-++--+-+++-++--+-
+3.592 +++-++-+--++++-++-+--+
+3.595 +++-+-+-+----+-++++-+-+-+----+-+
+3.600 -++++--+++-++++--+++
+
+KNOB / DIAL
+
+4 4 | 4 3 up
+5 3 | 3 2 down
+1 4 | 0 3 left
+5 4 | 5 2 right

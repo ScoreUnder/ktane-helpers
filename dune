@@ -6,3 +6,7 @@
  (name compwires)
  (modules Compwires)
  (libraries batteries))
+(executable
+ (name seqwires)
+ (modules Seqwires)
+ (libraries batteries))

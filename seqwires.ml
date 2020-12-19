@@ -51,7 +51,7 @@ let () =
     and notify c =
       printf "%s %c\n" c (Char.uppercase (qwerty_transform line.[1]))
     in
-    if String.length line = 2 then
+    if String.length line = 2 || line = "-" then
       match colour_transform line.[0] with
       | '1' ->
           notify (c_red ^ "Red" ^ c_reset);

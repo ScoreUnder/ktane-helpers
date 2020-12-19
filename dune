@@ -10,3 +10,8 @@
  (name seqwires)
  (modules Seqwires)
  (libraries batteries))
+(executable
+ (name button)
+ (modules Button)
+ (libraries batteries)
+ (preprocess (pps ppx_deriving.show)))

@@ -56,6 +56,9 @@ let c_bold = "\027[1m"
 let c_reset = "\027[0m"
 
 let hold_button () =
+  print_endline
+    (c_bold ^ "Hold the button and check the colour of the strip that lights up"
+   ^ c_reset);
   print_endline "What colour is the strip? (blue, yellow, other)";
   let digit =
     match to_color (input_line stdin) with

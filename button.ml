@@ -14,7 +14,7 @@ let rec read_yn prompt =
   | "n" -> false
   | _   -> read_yn prompt
 
-let to_color s =
+let color_of_string s =
   match Char.lowercase_ascii s.[0] with
   | 'b' -> Blue
   | 'r' -> Red
@@ -22,12 +22,17 @@ let to_color s =
   | 'y' -> Yellow
   | _   -> Other
 
-let to_text_enum s =
+let text_enum_of_string s =
   match Char.lowercase_ascii s.[0] with
   | 'a' -> Abort
   | 'd' -> Detonate
   | 'h' -> Hold
   | _   -> Other
+
+let timer_digit_of_color = function
+  | Blue   -> 4
+  | Yellow -> 5
+  | _      -> 1
 
 let batteries_gte : int -> bool =
   let min_batteries = ref 0 in
@@ -61,10 +66,7 @@ let hold_button () =
    ^ c_reset);
   print_endline "What colour is the strip? (blue, yellow, other)";
   let digit =
-    match to_color (input_line stdin) with
-    | Blue   -> "4"
-    | Yellow -> "5"
-    | _      -> "1"
+    string_of_int (timer_digit_of_color (color_of_string (input_line stdin)))
   in
   print_endline
     (c_bold ^ "When timer has " ^ digit ^ " in any position, release the button"
@@ -75,9 +77,9 @@ let press_button () =
 
 let main () =
   print_endline "Type button colour (blue, red, other)";
-  let color = to_color (input_line stdin) in
+  let color = color_of_string (input_line stdin) in
   print_endline "Type button text (Abort, Detonate, Hold, other)";
-  let text = to_text_enum (input_line stdin) in
+  let text = text_enum_of_string (input_line stdin) in
   printf "\n%s %s\n\n%!" (show_color_t color) (show_text_t text);
   match (color, text) with
   | Blue, Abort -> hold_button ()
@@ -89,6 +91,8 @@ let main () =
   | _, _ -> hold_button ()
 
 ;;
-while true do
-  main ()
-done
+try
+  while true do
+    main ()
+  done
+with End_of_file -> ()
